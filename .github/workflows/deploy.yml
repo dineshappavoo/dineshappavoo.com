@@ -16,10 +16,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-          
+
       - name: Install Dependencies
         working-directory: dineshappavoo
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Project
         working-directory: dineshappavoo
