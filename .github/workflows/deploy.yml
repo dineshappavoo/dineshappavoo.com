@@ -17,20 +17,20 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: dineshappavoo/package-lock.json  # Fixes lock file location
+          cache-dependency-path: '**/package-lock.json'  # Fix incorrect path
 
       - name: Install Dependencies
-        working-directory: dineshappavoo  # Sets correct working directory
+        working-directory: dineshappavoo
         run: npm install
 
       - name: Build Project
         working-directory: dineshappavoo
         run: |
           npm run build
-          npm run export  # Needed for static Next.js deployment
+          npm run export  # Needed for Next.js static deployment
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: dineshappavoo/out  # Change this if Next.js builds elsewhere
+          folder: dineshappavoo/out  # Ensure this matches your build output folder
