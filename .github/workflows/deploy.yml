@@ -9,21 +9,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '18'
+          cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install Dependencies
+        working-directory: dineshappavoo  # Set working directory instead of cd
         run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Build Project
+        working-directory: dineshappavoo
+        run: |
+          npm run build
+          npm run export  # Needed if using Next.js static export
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: out
+          folder: dineshappavoo/out  # Change this if Next.js builds into a different folder
