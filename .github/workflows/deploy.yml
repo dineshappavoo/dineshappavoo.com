@@ -16,9 +16,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'  # Fix incorrect path
-
+          
       - name: Install Dependencies
         working-directory: dineshappavoo
         run: npm install
