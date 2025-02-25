@@ -3,7 +3,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: isGitHubPages ? "/dineshappavoo.com" : "",
+  //basePath: isGitHubPages ? "/dineshappavoo.com" : "",
   basePath: '/dineshappavoo.com',
   // For asset references
   assetPrefix: '/dineshappavoo.com/',
