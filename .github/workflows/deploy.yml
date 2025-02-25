@@ -26,9 +26,35 @@ jobs:
         run: |
           npm run build
 
+      - name: Debug directory structure
+        working-directory: dineshappavoo
+        run: |
+          echo "Current directory contents:"
+          ls -la
+          echo "Build output:"
+          ls -la .next || echo ".next directory does not exist"
+          ls -la out || echo "out directory does not exist"
+
+      - name: Build Project
+        working-directory: dineshappavoo
+        run: |
+          npm run build
+          # Add this line to see what's being generated
+          ls -la
+          
+      - name: Debug build output
+        working-directory: dineshappavoo
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Directory contents after the build:"
+          ls -la
+          echo "Next.js version:"
+          npx next --version
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: dineshappavoo/.next  # Ensure this matches your build output folder
+          folder: dineshappavoo/out  # Ensure this matches your build output folder
           token: ${{ secrets.DINESHAPPAVOO_COM_GH_PAGES_DEPLOY }}
