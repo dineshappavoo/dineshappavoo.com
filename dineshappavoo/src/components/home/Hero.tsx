@@ -25,17 +25,10 @@ export function Hero() {
               className="mb-5"
             >
               <h2 className="text-base text-[#64FFDA] mb-2 tracking-normal">
-                Technology Leader <span className="text-[#4A5568] mx-1">|</span> 
-                Physics Enthusiast <span className="text-[#4A5568] mx-1">|</span> 
-                Rocket Science Explorer
+                Technology Leader | Physics Enthusiast | Rocket Science Explorer
               </h2>
-              <p className="text-sm text-slate-300 mb-2 font-light">
-                Building technology at the intersection of healthcare, consumer electronics, and space exploration
-              </p>
               <p className="text-xs text-slate-400 max-w-lg font-light">
-                1x Founder • Previously Engineering Manager <a href="https://affirm.com" target="_blank" rel="noopener noreferrer" className="text-[#64FFDA] hover:text-[#64FFDA]/80">@Affirm</a>, 
-                Engineer <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#64FFDA] hover:text-[#64FFDA]/80">@Twitter</a> and 
-                <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" className="text-[#64FFDA] hover:text-[#64FFDA]/80"> @AWS</a>
+                MS in Computer Science • Formerly @Affirm, @Twitter, @AWS
               </p>
             </motion.div>
 
@@ -81,7 +74,7 @@ export function Hero() {
                     </div>
                     <div>
                       <h3 className="text-sm font-medium text-slate-100">TheBean</h3>
-                      <p className="text-xs text-slate-400">Virtual blood twin using AlphaFold 3</p>
+                      <p className="text-xs text-slate-400">Digital blood twin using AlphaFold 3</p>
                     </div>
                   </div>
                 </div>
