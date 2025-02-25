@@ -11,7 +11,7 @@ const nextConfig = {
     styledComponents: true,
   },
   experimental: {
-    appDir: true, // ✅ Ensures Next.js doesn’t use the App Router
+    appDir: true, // ✅ Ensures Next.js uses the App Router
   },
 };
 
