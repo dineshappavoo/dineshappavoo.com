@@ -25,7 +25,6 @@ jobs:
         working-directory: dineshappavoo
         run: |
           npm run build
-          npm run export  # Needed for Next.js static deployment
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
