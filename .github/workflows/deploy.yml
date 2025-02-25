@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'  # Fix incorrect path
+          cache-dependency-path: 'dineshappavoo/package-lock.json'  # Fix incorrect path
 
       - name: Install Dependencies
         working-directory: dineshappavoo
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Project
         working-directory: dineshappavoo
