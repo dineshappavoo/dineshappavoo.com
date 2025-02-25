@@ -10,8 +10,11 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  experimental: {
-    appDir: true, // ✅ Ensures Next.js uses the App Router
+  //experimental: {
+    //appDir: true, // ✅ Ensures Next.js uses the App Router
+  //},
+  images: {
+    unoptimized: true, // This helps with static export
   },
 };
 
