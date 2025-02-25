@@ -4,7 +4,7 @@
 const nextConfig = {
   reactStrictMode: true,
   //basePath: isGitHubPages ? "/dineshappavoo.com" : "",
-  trailingSlash: false,
+  trailingSlash: true,
   basePath: '/dineshappavoo.com',
   // For asset references
   assetPrefix: '/dineshappavoo.com/',
