@@ -31,3 +31,4 @@ jobs:
         with:
           branch: gh-pages
           folder: dineshappavoo/.next  # Ensure this matches your build output folder
+          token: ${{ secrets.DINESHAPPAVOO_COM_GH_PAGES_DEPLOY }}
