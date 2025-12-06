@@ -2,16 +2,10 @@
 
 const nextConfig = {
   reactStrictMode: true,
-
-  // GitHub project pages need a basePath
-  basePath: "/dineshappavoo.com",
-  assetPrefix: "/dineshappavoo.com/",
-
-  output: "export",      // generates /out
-  trailingSlash: true,   // good for static hosting
-
+  output: "export",      // generate /out on build
+  trailingSlash: true,
   images: {
-    unoptimized: true,   // required for static export
+    unoptimized: true,   // needed for static export
   },
 };
 
