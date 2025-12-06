@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-isLocalEnv = false;
-isLocalEnv = process.env.NEXT_LOCAL_GITHUB_PAGES === "true";
+//isLocalEnv = false;
+let isLocalEnv = process.env.NEXT_LOCAL_GITHUB_PAGES === "true";
 
 const nextConfig = {
   reactStrictMode: true,

@@ -14,6 +14,16 @@ pnpm dev
 bun dev
 ```
 
+## TO EXPORT THE PAGE TO GITHUB BY GENERATING THE out FILE:
+```bash
+# run build first
+npm ci
+npm run build
+
+# and then export
+npm run export
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
