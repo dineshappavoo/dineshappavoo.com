@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
 
-const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+isLocalEnv = false;
+isLocalEnv = process.env.NEXT_LOCAL_GITHUB_PAGES === "true";
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: isGitHubPages ? "/dineshappavoo.com" : "",
+  basePath: isLocalEnv ? "" : "/dineshappavoo.com",
   trailingSlash: true,
   //basePath: '/dineshappavoo.com',
   // For asset references
   //assetPrefix: '/dineshappavoo.com/',
-  assetPrefix: isGitHubPages ? "/dineshappavoo.com/" : "",
+  assetPrefix: isLocalEnv ? "" : "/dineshappavoo.com/",
   output: "export", // ✅ Always export static files
   trailingSlash: true, // ✅ Ensures paths work correctly for static pages
   compiler: {
