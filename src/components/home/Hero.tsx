@@ -43,8 +43,8 @@ export function Hero() {
               <div className="stat-label">Companies Founded</div>
             </div>
             <div className="stat">
-              <div className="stat-number" style={{ color: 'var(--accent-green)' }}>8+</div>
-              <div className="stat-label">Years in Tech</div>
+              <div className="stat-number" style={{ color: 'var(--accent-green)' }}>12+</div>
+              <div className="stat-label">Years in Tech & Entrepreneurship</div>
             </div>
             <div className="stat">
               <div className="stat-number" style={{ color: 'var(--accent-orange)' }}>3</div>

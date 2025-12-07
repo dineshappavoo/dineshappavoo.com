@@ -12,29 +12,56 @@ export function Newsletter() {
     e.preventDefault();
     setStatus('loading');
 
+    // Mailchimp doesn't support CORS, so we use JSONP trick
+    // Change the /post to /post-json and add &c=? for JSONP
+    const url = `https://dineshappavoo.us19.list-manage.com/subscribe/post-json?u=378a03eeb2358b1416a203297&id=63d42a7294&f_id=007150e0f0&EMAIL=${encodeURIComponent(email)}&c=?`;
+
     try {
-      // Mailchimp form action URL
-      // Format: https://[your-domain].us[X].list-manage.com/subscribe/post?u=[USER_ID]&id=[LIST_ID]
-      // Replace these with your actual Mailchimp values
-      const MAILCHIMP_URL = 'YOUR_MAILCHIMP_FORM_ACTION_URL';
+      // Use JSONP to bypass CORS
+      const script = document.createElement('script');
+      const callbackName = 'mailchimpCallback' + Date.now();
       
-      // Create form data
-      const formData = new FormData();
-      formData.append('EMAIL', email);
-      formData.append('b_YOUR_BOT_FIELD', ''); // Bot field, leave empty
+      // Define callback function
+      (window as any)[callbackName] = (data: any) => {
+        // Clean up
+        delete (window as any)[callbackName];
+        document.body.removeChild(script);
 
-      // Submit to Mailchimp
-      const response = await fetch(MAILCHIMP_URL, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors', // Mailchimp doesn't support CORS, so we use no-cors
-      });
+        if (data.result === 'success') {
+          setStatus('success');
+          setMessage('Thanks for subscribing!');
+          setEmail('');
+        } else {
+          setStatus('error');
+          // Clean up the error message from Mailchimp
+          let errorMsg = data.msg || 'Something went wrong. Please try again.';
+          // Remove HTML tags and extra info
+          errorMsg = errorMsg.replace(/<[^>]*>/g, '').split('.')[0];
+          
+          // Handle common errors
+          if (errorMsg.includes('already subscribed')) {
+            errorMsg = 'This email is already subscribed!';
+          }
+          setMessage(errorMsg);
+        }
+      };
 
-      // Since we're using no-cors, we can't read the response
-      // Assume success if no error is thrown
-      setStatus('success');
-      setMessage('Thanks for subscribing! Check your email to confirm.');
-      setEmail('');
+      // Add script to page
+      script.src = url.replace('&c=?', `&c=${callbackName}`);
+      document.body.appendChild(script);
+
+      // Timeout after 10 seconds
+      setTimeout(() => {
+        if (status === 'loading') {
+          setStatus('error');
+          setMessage('Request timed out. Please try again.');
+          if (document.body.contains(script)) {
+            document.body.removeChild(script);
+          }
+          delete (window as any)[callbackName];
+        }
+      }, 10000);
+
     } catch (error) {
       setStatus('error');
       setMessage('Something went wrong. Please try again.');
@@ -59,7 +86,7 @@ export function Newsletter() {
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-            <div className="flex gap-3 mb-4">
+            <div className="flex gap-3 mb-4 flex-col sm:flex-row">
               <input
                 type="email"
                 value={email}
@@ -72,28 +99,48 @@ export function Newsletter() {
                   borderColor: 'var(--border-medium)',
                   fontSize: '1rem',
                   outline: 'none',
+                  background: 'white',
+                  opacity: status === 'loading' || status === 'success' ? 0.6 : 1,
                 }}
               />
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
                 className="btn btn-blue ui-font"
-                style={{ whiteSpace: 'nowrap' }}
+                style={{ 
+                  whiteSpace: 'nowrap',
+                  opacity: status === 'loading' || status === 'success' ? 0.6 : 1,
+                  cursor: status === 'loading' || status === 'success' ? 'not-allowed' : 'pointer',
+                }}
               >
-                {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                {status === 'loading' ? 'Subscribing...' : status === 'success' ? 'Subscribed!' : 'Subscribe'}
               </button>
             </div>
 
             {status === 'success' && (
-              <p className="text-small" style={{ color: 'var(--accent-green)' }}>
-                {message}
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 rounded-lg mb-4"
+                style={{ background: 'var(--accent-green-light)' }}
+              >
+                <p className="text-small" style={{ color: 'var(--accent-green)', fontWeight: 600 }}>
+                  ✓ {message}
+                </p>
+              </motion.div>
             )}
 
             {status === 'error' && (
-              <p className="text-small" style={{ color: 'var(--accent-orange)' }}>
-                {message}
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="p-4 rounded-lg mb-4"
+                style={{ background: 'var(--accent-orange-light)' }}
+              >
+                <p className="text-small" style={{ color: 'var(--accent-orange)', fontWeight: 600 }}>
+                  ✗ {message}
+                </p>
+              </motion.div>
             )}
 
             {status === 'idle' && (
