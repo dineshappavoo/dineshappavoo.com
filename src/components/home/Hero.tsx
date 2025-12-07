@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -107,10 +108,13 @@ export function Hero() {
             className="hidden lg:block col-span-4"
           >
             <div className="relative w-[250px] mx-auto">
-              <img
+              <Image
                 src="/profile-pic.jpg"
                 alt="Dinesh Appavoo"
+                width={250}
+                height={250}
                 className="w-full rounded-lg"
+                priority
               />
             </div>
           </motion.div>
