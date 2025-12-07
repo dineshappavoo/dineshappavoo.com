@@ -4,129 +4,158 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="min-h-screen bg-[#0A192F] py-16">
-      <div className="max-w-6xl mx-auto px-12">
+    <section id="about" className="section" style={{ background: 'var(--bg-secondary)' }}>
+      <div className="container-editorial">
+        <div className="divider-colored"></div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-white mb-2">My Journey</h2>
-          <div className="h-px w-16 bg-[#64FFDA]"></div>
+          <p className="text-meta mb-6" style={{ color: 'var(--accent-green)' }}>BACKGROUND</p>
+          <h2 className="mb-6">The Journey</h2>
+          <p className="text-subtitle">
+            From engineering at major tech companies to founding ventures at the frontier of science.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-12 gap-12">
-          {/* Main Content - 8 columns */}
-          <div className="col-span-8 space-y-8">
-            {/* Current Research */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Current Research & Projects</h3>
-              <div className="space-y-4">
+        {/* Experience Timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h3 className="mb-8">Professional Experience</h3>
+          
+          <div className="space-y-0">
+            <div className="timeline-item">
+              <div className="flex justify-between items-baseline mb-3 flex-wrap gap-2">
                 <div>
-                  <h4 className="text-white text-sm font-medium mb-2">Advanced FFSC Rocket Engine Development</h4>
-                  <p className="text-slate-300 text-sm">
-                    Designing a Full-Flow Staged Combustion rocket engine similar to Raptor 3, featuring an integrated propulsion system with oxygen-rich and fuel-rich turbopump systems, main combustion chamber design, and optimized bell nozzle configuration.
-                  </p>
+                  <h4 className="mb-1" style={{ fontSize: '1.25rem' }}>Engineering Manager</h4>
+                  <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Affirm</p>
                 </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-2">Computational Blood Proteomics Research</h4>
-                  <p className="text-slate-300 text-sm">
-                    Pioneering research in blood protein analysis and virtual modeling, focusing on protein structure mapping and creating virtual blood twins for drug discovery applications using AlphaFold 3 technology.
-                  </p>
-                </div>
+                <span className="text-meta" style={{ color: 'var(--accent-blue)' }}>2020 — 2023</span>
               </div>
-            </motion.div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Led the Affirm Card from inception to scale, building the product that would 
+                redefine how millions of Americans access credit. Focused on user experience, 
+                growth mechanics, and platform reliability.
+              </p>
+            </div>
 
-            {/* Innovation & Impact */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Innovation & Social Impact</h3>
-              <div className="space-y-4">
+            <div className="timeline-item">
+              <div className="flex justify-between items-baseline mb-3 flex-wrap gap-2">
                 <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Founder & CEO @ Labineer</h4>
-                  <p className="text-slate-400 text-xs mb-2">2010 - 2011</p>
-                  <p className="text-slate-300 text-sm">
-                    Founded a healthcare equipment marketplace company to provide quality equipment at competitive prices, implementing price comparison features.
-                  </p>
+                  <h4 className="mb-1" style={{ fontSize: '1.25rem' }}>Software Engineer</h4>
+                  <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Twitter</p>
                 </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Board of Directors @ RRRcomputer.org</h4>
-                  <p className="text-slate-400 text-xs mb-2">2020 - 2021</p>
-                  <p className="text-slate-300 text-sm">
-                    Led marketing and strategic planning initiatives to bridge the digital divide, including fundraising campaigns and media collaborations.
-                  </p>
-                </div>
+                <span className="text-meta" style={{ color: 'var(--accent-blue)' }}>2016 — 2020</span>
               </div>
-            </motion.div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Built core infrastructure for Twitter's timeline, messaging, and authentication 
+                systems. Worked on products serving hundreds of millions of daily users.
+              </p>
+            </div>
 
-            {/* Professional Experience */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Professional Experience</h3>
-              <div className="space-y-4">
+            <div className="timeline-item">
+              <div className="flex justify-between items-baseline mb-3 flex-wrap gap-2">
                 <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Engineering Manager (Product Focused) @ Affirm</h4>
-                  <p className="text-slate-400 text-xs mb-2">2020 - 2023</p>
-                  <p className="text-slate-300 text-sm">
-                    Led the development and scaling of Affirm Card from inception, focusing on user experience, product growth, and core platform functionality.
-                  </p>
+                  <h4 className="mb-1" style={{ fontSize: '1.25rem' }}>Software Engineer</h4>
+                  <p style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>Amazon Web Services</p>
                 </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Engineering @ Twitter</h4>
-                  <p className="text-slate-400 text-xs mb-2">2016 - 2020</p>
-                  <p className="text-slate-300 text-sm">
-                    Built core user experience and platform products, including services for timeline, messaging, and user authentication.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Engineering @ AWS</h4>
-                  <p className="text-slate-400 text-xs mb-2">2015 - 2016</p>
-                  <p className="text-slate-300 text-sm">
-                    Launched and scaled AWS load balancing products (ALB/ELB) across multiple regions to support millions of machines.
-                  </p>
-                </div>
+                <span className="text-meta" style={{ color: 'var(--accent-blue)' }}>2015 — 2016</span>
               </div>
-            </motion.div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Launched and scaled AWS Application Load Balancer across multiple regions, 
+                building infrastructure that supports millions of machines globally.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
+        <div className="divider"></div>
+
+        {/* Education & Early Ventures */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h3 className="mb-8">Education & Early Ventures</h3>
+          
+          <div className="card-orange mb-8">
+            <h4 className="mb-2" style={{ fontSize: '1.25rem' }}>MS in Computer Science</h4>
+            <p style={{ fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--text-secondary)' }}>
+              The University of Texas at Dallas
+            </p>
+            <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-tertiary)' }}>
+              Focused on distributed systems, algorithms, and machine learning foundations.
+            </p>
           </div>
 
-          {/* Education & Skills - 4 columns */}
-          <div className="col-span-4 space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Education</h3>
-              <div className="space-y-3">
-                <div>
-                  <h4 className="text-white text-sm font-medium">The University of Texas</h4>
-                  <p className="text-slate-400 text-xs">MS, Computer Science</p>
-                </div>
+          <div className="space-y-6">
+            <div className="card">
+              <div className="flex justify-between items-baseline mb-2 flex-wrap gap-2">
+                <h4 style={{ fontSize: '1.25rem' }}>Founder & CEO, Labineer</h4>
+                <span className="text-meta" style={{ color: 'var(--accent-green)' }}>2010 — 2011</span>
               </div>
-            </motion.div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Built a healthcare equipment marketplace focused on price transparency and 
+                quality—a precursor to my current work in healthcare innovation.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="flex justify-between items-baseline mb-2 flex-wrap gap-2">
+                <h4 style={{ fontSize: '1.25rem' }}>Board of Directors, RRRcomputer.org</h4>
+                <span className="text-meta" style={{ color: 'var(--accent-green)' }}>2020 — 2021</span>
+              </div>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Led strategic initiatives to bridge the digital divide through technology access 
+                programs and community partnerships.
+              </p>
+            </div>
           </div>
-        </div>
+        </motion.div>
+
+        <div className="divider"></div>
+
+        {/* Current Research */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h3 className="mb-6">Current Research Focus</h3>
+          
+          <div className="grid-2">
+            <div className="card-blue">
+              <div className="text-5xl mb-4">🚀</div>
+              <h4 className="mb-3" style={{ fontSize: '1.25rem' }}>Rocket Propulsion Systems</h4>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Full-Flow Staged Combustion engines, turbopump architecture, combustion 
+                chamber optimization, and nozzle design for next-generation spacecraft.
+              </p>
+            </div>
+
+            <div className="card-green">
+              <div className="text-5xl mb-4">🧬</div>
+              <h4 className="mb-3" style={{ fontSize: '1.25rem' }}>Computational Proteomics</h4>
+              <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                Virtual blood modeling, protein structure prediction using AlphaFold 3, 
+                drug-protein interaction simulation, and personalized medicine applications.
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

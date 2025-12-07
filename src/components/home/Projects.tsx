@@ -4,156 +4,204 @@ import { motion } from "framer-motion";
 
 export function Projects() {
   return (
-    <section id="projects" className="min-h-screen bg-[#0A192F] py-16">
-      <div className="max-w-6xl mx-auto px-12">
+    <section id="projects" className="section">
+      <div className="container-editorial">
+        <div className="divider-colored"></div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-white mb-2">My Work</h2>
-          <div className="h-px w-16 bg-[#64FFDA]"></div>
+          <p className="text-meta mb-6" style={{ color: 'var(--accent-orange)' }}>RESEARCH & DEVELOPMENT</p>
+          <h2 className="mb-6">Deep Technical Work</h2>
+          <p className="text-subtitle">
+            Exploring the boundaries of aerospace engineering and computational biology.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-12 gap-12">
-          {/* Main Projects - 8 columns */}
-          <div className="col-span-8 space-y-8">
-            {/* FFSC Project */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Full-Flow Staged Combustion (FFSC) Rocket Engine</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-2">Project Overview</h4>
-                  <p className="text-slate-300 text-sm mb-4">
-                    Developing a next-generation FFSC rocket engine inspired by SpaceX's Raptor 3, focusing on optimizing performance and efficiency through advanced propulsion system design.
-                  </p>
-                  
-                  <h4 className="text-white text-sm font-medium mb-2">Key Components</h4>
-                  <ul className="text-slate-300 text-sm space-y-2">
-                    <li>• Oxygen-Rich Turbopump System
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        High-pressure oxygen turbopump design optimized for maximum efficiency and stable operation at extreme conditions.
-                      </p>
-                    </li>
-                    <li>• Fuel-Rich Turbopump Architecture
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Advanced fuel delivery system designed for optimal fuel-oxidizer ratio control and combustion stability.
-                      </p>
-                    </li>
-                    <li>• Main Combustion Chamber (MCC)
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Innovative chamber design focusing on optimal mixing, combustion efficiency, and thermal management.
-                      </p>
-                    </li>
-                    <li>• Bell Nozzle Configuration
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Computationally optimized bell nozzle design for maximum thrust and efficiency at various atmospheric conditions.
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Virtual Twin Project */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Virtual Blood Twin Research</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-2">Project Overview</h4>
-                  <p className="text-slate-300 text-sm mb-4">
-                    Creating a comprehensive virtual blood modeling system using AlphaFold 3 technology for advanced drug discovery and personalized medicine applications.
-                  </p>
-
-                  <h4 className="text-white text-sm font-medium mb-2">Key Research Areas</h4>
-                  <ul className="text-slate-300 text-sm space-y-2">
-                    <li>• Protein Structure Mapping
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Detailed mapping and analysis of blood protein structures using advanced computational methods.
-                      </p>
-                    </li>
-                    <li>• AlphaFold Integration
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Implementing and extending AlphaFold 3's capabilities for accurate protein structure prediction and interaction modeling.
-                      </p>
-                    </li>
-                    <li>• Virtual Twin Development
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Creating digital representations of blood components for simulation and analysis.
-                      </p>
-                    </li>
-                    <li>• Drug Interaction Modeling
-                      <p className="text-slate-400 text-xs ml-4 mt-1">
-                        Simulating and predicting drug interactions with blood proteins for accelerated drug discovery.
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
+        {/* FFSC Engine Research */}
+        <motion.article
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <div className="mb-6">
+            <span className="badge badge-blue ui-font mb-4 inline-block">AEROSPACE ENGINEERING</span>
+            <h3 className="mb-4">Full-Flow Staged Combustion Engine</h3>
+            <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
+              Advanced propulsion research inspired by SpaceX Raptor 3
+            </p>
           </div>
 
-          {/* Project Stats & Info - 4 columns */}
-          <div className="col-span-4 space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Project Links</h3>
-              <div className="space-y-3">
-                <a 
-                  href="https://hypersona.dineshappavoo.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block text-slate-300 text-sm hover:text-[#64FFDA] transition-colors"
-                >
-                  Hypersona Project →
-                </a>
-                <a 
-                  href="https://thebean.dineshappavoo.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block text-slate-300 text-sm hover:text-[#64FFDA] transition-colors"
-                >
-                  TheBean Research →
-                </a>
-              </div>
-            </motion.div>
+          <div className="space-y-6">
+            <p>
+              The Full-Flow Staged Combustion (FFSC) cycle represents the pinnacle of rocket 
+              engine design—a configuration that extracts maximum performance from every drop 
+              of propellant. Unlike traditional engines that waste energy, FFSC systems route 
+              all propellant through turbines before combustion, achieving unprecedented efficiency.
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="bg-[#112240] rounded-lg p-6 border border-slate-800"
-            >
-              <h3 className="text-[#64FFDA] text-lg font-medium mb-3">Research Areas</h3>
-              <div className="space-y-2">
-                <p className="text-slate-300 text-sm">• Rocket Propulsion Systems</p>
-                <p className="text-slate-300 text-sm">• Computational Biology</p>
-                <p className="text-slate-300 text-sm">• Machine Learning</p>
-                <p className="text-slate-300 text-sm">• Protein Structure Analysis</p>
+            <div className="pull-quote">
+              "The FFSC cycle isn't just incrementally better—it's fundamentally different, 
+              enabling performance metrics that seemed impossible a decade ago."
+            </div>
+
+            <p>
+              Our research focuses on four critical subsystems, each presenting unique engineering 
+              challenges that push the boundaries of materials science and thermodynamics.
+            </p>
+
+            <div className="grid-2 mt-8 mb-8">
+              <div className="card-blue">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Oxygen-Rich Turbopump</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Operating in oxygen-rich environments at extreme temperatures, this system 
+                  demands materials that can withstand oxidative stress while maintaining 
+                  structural integrity under high-speed rotation.
+                </p>
               </div>
-            </motion.div>
+
+              <div className="card-blue">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Fuel-Rich Turbopump</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  The fuel-rich side manages cryogenic propellants while precisely controlling 
+                  mixture ratios—critical for maintaining combustion stability and preventing 
+                  destructive oscillations.
+                </p>
+              </div>
+
+              <div className="card">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Main Combustion Chamber</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Where chemistry becomes thrust. We're optimizing injection patterns and 
+                  chamber geometry to achieve complete combustion while managing thermal 
+                  loads that would melt most materials.
+                </p>
+              </div>
+
+              <div className="card">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Bell Nozzle</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Computational fluid dynamics guides our nozzle design, optimizing expansion 
+                  ratios for performance across varying atmospheric conditions—from sea level 
+                  to vacuum.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
+              This work directly supports Hypersona's vision of making point-to-point rocket 
+              travel economically viable and safe for regular passenger operations.
+            </p>
+
+            <div className="pt-4">
+              <a 
+                href="https://hyperx.hypersona.space" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="link-blue ui-font"
+              >
+                Explore the technical details →
+              </a>
+            </div>
           </div>
-        </div>
+        </motion.article>
+
+        <div className="divider"></div>
+
+        {/* Virtual Blood Twin Research */}
+        <motion.article
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12"
+        >
+          <div className="mb-6">
+            <span className="badge badge-green ui-font mb-4 inline-block">COMPUTATIONAL BIOLOGY</span>
+            <h3 className="mb-4">Virtual Blood Twin Technology</h3>
+            <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
+              Digital proteomics using AlphaFold 3 for personalized medicine
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            <p>
+              Blood is our body's information highway—a complex soup of thousands of proteins, 
+              each playing specific roles in everything from immunity to metabolism. Understanding 
+              how drugs interact with this system has historically required years of wet-lab 
+              experimentation. We're changing that paradigm.
+            </p>
+
+            <div className="pull-quote">
+              "By creating accurate digital models of blood at the molecular level, we can 
+              test thousands of drug candidates in silico before synthesizing a single molecule."
+            </div>
+
+            <p>
+              Using AlphaFold 3's breakthrough protein structure prediction capabilities, we're 
+              building comprehensive models of blood proteomics. These "virtual twins" capture 
+              the structural details and interaction patterns that govern drug behavior in the 
+              human body.
+            </p>
+
+            <div className="grid-2 mt-8 mb-8">
+              <div className="card-green">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Protein Structure Mapping</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Systematic analysis of blood protein structures, creating a comprehensive 
+                  atlas of molecular architecture that serves as the foundation for all 
+                  downstream predictions.
+                </p>
+              </div>
+
+              <div className="card-green">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Drug Interaction Modeling</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Simulating how drug candidates bind to target proteins, predicting both 
+                  efficacy and potential side effects before clinical trials.
+                </p>
+              </div>
+
+              <div className="card">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Virtual Twin Development</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Creating personalized models that account for individual genetic variations, 
+                  enabling truly tailored therapeutic approaches.
+                </p>
+              </div>
+
+              <div className="card">
+                <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Discovery Pipeline</h4>
+                <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
+                  Accelerating drug discovery by orders of magnitude, from years to months, 
+                  while reducing costs and improving success rates.
+                </p>
+              </div>
+            </div>
+
+            <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
+              This research powers Bean's mission to democratize personalized medicine through 
+              computational precision.
+            </p>
+
+            <div className="pt-4">
+              <a 
+                href="https://bean.inc" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="link-blue ui-font"
+              >
+                Learn about the technology →
+              </a>
+            </div>
+          </div>
+        </motion.article>
       </div>
     </section>
   );

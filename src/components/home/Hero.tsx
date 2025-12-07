@@ -1,124 +1,111 @@
 'use client';
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="min-h-screen relative overflow-hidden bg-[#0A192F] flex items-center py-8">
-      <div className="relative z-10 max-w-6xl mx-auto px-12 w-full">
-        <div className="grid grid-cols-12 gap-6 items-center">
-          {/* Left side content - 8 columns (66.66%) */}
-          <div className="col-span-8">
-            <motion.h1 
-              className="text-3xl lg:text-4xl font-bold mb-3 text-white tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Dinesh Appavoo
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="mb-5"
-            >
-              <h2 className="text-base text-[#64FFDA] mb-2 tracking-normal">
-                Technology Leader | Physics Enthusiast | Rocket Science Explorer
-              </h2>
-              <p className="text-xs text-slate-400 max-w-lg font-light">
-                MS in Computer Science • Formerly @Affirm, @Twitter, @AWS
-              </p>
-            </motion.div>
-
-            {/* Startups Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mb-5"
-            >
-              <h3 className="text-xs font-medium text-slate-200 mb-2 pb-1 border-b border-slate-800">
-                Startups I'm Building
-              </h3>
-              <div className="space-y-2">
-                {/* Hypersona Card */}
-                <div className="bg-[#112240] rounded-lg p-2.5 border border-slate-800">
-                  <div className="flex items-center">
-                    <div className="w-7 h-7 flex items-center justify-center bg-[#1A3152] rounded-lg mr-3">
-                      <span className="text-base font-bold text-[#64FFDA]">H</span>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-slate-100">Hypersona</h3>
-                      <p className="text-xs text-slate-400">Point-to-point rocket based earth transportation</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* TheBean Card */}
-                <div className="bg-[#112240] rounded-lg p-2.5 border border-slate-800">
-                  <div className="flex items-center">
-                    <div className="w-7 h-7 flex items-center justify-center bg-[#1A3152] rounded-lg mr-3">
-                      <motion.div
-                        className="w-4 h-4 rounded-full bg-[#64FFDA]"
-                        animate={{
-                          scale: [1, 1.1, 1],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-slate-100">TheBean</h3>
-                      <p className="text-xs text-slate-400">Digital blood twin using AlphaFold 3</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Navigation Buttons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="flex space-x-3"
-            >
-              <a href="#about" 
-                 className="px-4 py-1.5 rounded-lg bg-[#64FFDA] text-[#0A192F] font-medium hover:bg-[#64FFDA]/90 transition-all text-xs">
-                My Journey
-              </a>
-              <a href="#projects"
-                 className="px-4 py-1.5 rounded-lg bg-transparent text-[#64FFDA] font-medium border border-[#64FFDA] hover:bg-[#64FFDA]/10 transition-all text-xs">
-                My Current Work
-              </a>
-            </motion.div>
+    <section className="section-xl">
+      <div className="container-editorial">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Meta Info */}
+          <div className="mb-10">
+            <p className="text-meta mb-3" style={{ color: 'var(--accent-blue)' }}>SAN FRANCISCO, CALIFORNIA</p>
+            <div className="h-1 w-16 rounded-full" style={{ background: 'linear-gradient(90deg, var(--accent-blue), var(--accent-green))' }}></div>
           </div>
 
-          {/* Profile Picture - 4 columns (33.33%) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="hidden lg:block col-span-4"
-          >
-            <div className="relative w-[250px] mx-auto">
-              <Image
-                src="/dineshappavoo.com/profile-pic.jpg"
-                alt="Dinesh Appavoo"
-                width={250}
-                height={250}
-                className="w-full rounded-lg"
-                priority
-              />
+          {/* Main Headline */}
+          <h1 className="mb-6">
+            Dinesh <span className="text-gradient-blue">Appavoo</span>
+          </h1>
+          
+          {/* Subheadline */}
+          <div className="text-subtitle mb-10 max-w-xl">
+            <p>
+              Building transformative technology at the intersection of <strong style={{ color: 'var(--accent-blue)' }}>aerospace</strong> and <strong style={{ color: 'var(--accent-green)' }}>healthcare</strong>.
+            </p>
+          </div>
+
+          {/* Role Badges */}
+          <div className="flex flex-wrap gap-3 mb-12">
+            <span className="badge badge-blue">Founder</span>
+            <span className="badge badge-green">Engineer</span>
+            <span className="badge badge-orange">Researcher</span>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 py-10 border-t border-b" style={{ borderColor: 'var(--border-light)' }}>
+            <div className="stat">
+              <div className="stat-number" style={{ color: 'var(--accent-blue)' }}>2</div>
+              <div className="stat-label">Companies Founded</div>
             </div>
+            <div className="stat">
+              <div className="stat-number" style={{ color: 'var(--accent-green)' }}>8+</div>
+              <div className="stat-label">Years in Tech</div>
+            </div>
+            <div className="stat">
+              <div className="stat-number" style={{ color: 'var(--accent-orange)' }}>3</div>
+              <div className="stat-label">Major Companies</div>
+            </div>
+            <div className="stat">
+              <div className="stat-number" style={{ color: 'var(--accent-purple)' }}>2</div>
+              <div className="stat-label">Research Areas</div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap gap-4 ui-font">
+            <a href="#companies" className="btn btn-blue">
+              Explore My Work
+            </a>
+            <a href="#about" className="btn btn-outline">
+              My Journey
+            </a>
+            <a href="mailto:hello@dineshappavoo.com" className="btn btn-ghost">
+              Get in Touch
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Featured Quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-20"
+        >
+          <div className="card-blue p-8">
+            <p className="text-small mb-2" style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>
+              Current Focus
+            </p>
+            <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
+              Developing <strong>Full-Flow Staged Combustion rocket engines</strong> for point-to-point Earth transportation 
+              and creating <strong>digital blood twins</strong> using AlphaFold 3 for personalized medicine.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <p className="text-small mb-3" style={{ color: 'var(--text-tertiary)' }}>Scroll to explore</p>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-block"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="var(--accent-blue)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
