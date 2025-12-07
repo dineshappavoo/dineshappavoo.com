@@ -109,7 +109,7 @@ export function Hero() {
           >
             <div className="relative w-[250px] mx-auto">
               <Image
-                src="/profile-pic.jpg"
+                src="/dineshappavoo.com/profile-pic.jpg"
                 alt="Dinesh Appavoo"
                 width={250}
                 height={250}
