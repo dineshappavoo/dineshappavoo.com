@@ -5,24 +5,30 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Install npm if you have not done that already
+# only needed the first time you setup the server locally
+cd ~/workspace/dineshappavoo.com/.  # this assumes you are downloading the project under workspace
 
-## TO EXPORT THE PAGE TO GITHUB BY GENERATING THE out FILE:
-```bash
-# run build first
+npm install
+
+# to check the CI
 npm ci
+
+# And then run build locally
 npm run build
 
-# and then export
+# finally deploy command. This will generate /out folder with all the static files
+# this /out folder is needed for github to host the static pages
+npm run deploy
+
+# you can use export to make sure everything is exported
+# I didn't use export command a few times, but it still worked
 npm run export
+
+# for local testing you can simply run npm run dev even before deploy command
+npm run dev
 ```
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -30,6 +36,12 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+# TO CONFIGURE GITHUB PAGES
+# go to the repo dineshappavoo.com
+# from settings-> pages, add dineshappavoo.com in Custom domain field. Please follow the read me section near that field. Or you can ask chatgpt. You need to add some IP
+# addresses to GODADDY DNS for this to work
+
+## AUTO GENERATED README BELOW:
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
