@@ -43,29 +43,35 @@ export function Hero() {
               <div className="stat-label">Companies Founded</div>
             </div>
             <div className="stat">
-              <div className="stat-number" style={{ color: 'var(--accent-green)' }}>12+</div>
+              <div className="stat-number" style={{ color: 'var(--accent-blue)' }}>12+</div>
               <div className="stat-label">Years in Tech & Entrepreneurship</div>
             </div>
             <div className="stat">
-              <div className="stat-number" style={{ color: 'var(--accent-orange)' }}>3</div>
+              <div className="stat-number" style={{ color: 'var(--accent-blue)' }}>3</div>
               <div className="stat-label">Major Companies</div>
             </div>
             <div className="stat">
-              <div className="stat-number" style={{ color: 'var(--accent-purple)' }}>2</div>
+              <div className="stat-number" style={{ color: 'var(--accent-blue)' }}>2</div>
               <div className="stat-label">Research Areas</div>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 ui-font">
-            <a href="#companies" className="btn btn-blue">
+            <a href="#blog" className="btn btn-blue">
+              Blog
+            </a>
+            <a href="#newsletter" className="btn btn-ghost">
+              Newsletter
+            </a>
+            <a href="#companies" className="btn btn-ghost">
               Explore My Work
             </a>
-            <a href="#about" className="btn btn-outline">
+            <a href="#about" className="btn btn-ghost">
               My Journey
             </a>
             <a href="mailto:hello@dineshappavoo.com" className="btn btn-ghost">
-              Get in Touch
+              hello@dineshappavoo.com
             </a>
           </div>
         </motion.div>

@@ -9,6 +9,7 @@ interface BlogPost {
   pubDate: string;
   description: string;
   thumbnail?: string;
+  content?: string;
 }
 
 export function Blog() {
@@ -27,7 +28,25 @@ export function Blog() {
         const data = await response.json();
         
         if (data.status === 'ok') {
-          setPosts(data.items.slice(0, 3)); // Get latest 3 posts
+          // Extract thumbnail from content
+          const postsWithThumbnails = data.items.map((item: any) => {
+            let thumbnail = item.thumbnail;
+            
+            // If no thumbnail, try to extract from content
+            if (!thumbnail && item.content) {
+              const imgMatch = item.content.match(/<img[^>]+src="([^">]+)"/);
+              if (imgMatch && imgMatch[1]) {
+                thumbnail = imgMatch[1];
+              }
+            }
+            
+            return {
+              ...item,
+              thumbnail,
+            };
+          });
+          
+          setPosts(postsWithThumbnails.slice(0, 3)); // Get latest 3 posts
         }
       } catch (error) {
         console.error('Error fetching blog posts:', error);
@@ -98,39 +117,62 @@ export function Blog() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="card"
               >
-                <div className="mb-4">
-                  <span className="badge badge-purple ui-font">Medium</span>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Thumbnail */}
+                  {post.thumbnail && (
+                    <div className="md:col-span-1">
+                      <a 
+                        href={post.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img 
+                          src={post.thumbnail} 
+                          alt={post.title}
+                          className="w-full h-48 object-cover rounded-lg hover:opacity-80 transition-opacity"
+                          style={{ aspectRatio: '16/9' }}
+                        />
+                      </a>
+                    </div>
+                  )}
+                  
+                  {/* Content */}
+                  <div className={post.thumbnail ? 'md:col-span-2' : 'md:col-span-3'}>
+                    <div className="mb-4">
+                      <span className="badge badge-purple ui-font">Medium</span>
+                    </div>
+                    
+                    <h3 className="mb-4" style={{ fontSize: '1.75rem' }}>
+                      <a 
+                        href={post.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:opacity-70 transition-opacity"
+                      >
+                        {post.title}
+                      </a>
+                    </h3>
+
+                    <div className="flex items-center gap-4 mb-4 ui-font text-meta">
+                      <span>{formatDate(post.pubDate)}</span>
+                      <span>•</span>
+                      <span>{getReadTime(post.description)}</span>
+                    </div>
+
+                    <p className="mb-6" style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
+                      {stripHtml(post.description).slice(0, 200)}...
+                    </p>
+
+                    <a 
+                      href={post.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="link-blue ui-font"
+                    >
+                      Read on Medium →
+                    </a>
+                  </div>
                 </div>
-                
-                <h3 className="mb-4" style={{ fontSize: '1.75rem' }}>
-                  <a 
-                    href={post.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-70 transition-opacity"
-                  >
-                    {post.title}
-                  </a>
-                </h3>
-
-                <div className="flex items-center gap-4 mb-4 ui-font text-meta">
-                  <span>{formatDate(post.pubDate)}</span>
-                  <span>•</span>
-                  <span>{getReadTime(post.description)}</span>
-                </div>
-
-                <p className="mb-6" style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
-                  {stripHtml(post.description).slice(0, 200)}...
-                </p>
-
-                <a 
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-blue ui-font"
-                >
-                  Read on Medium →
-                </a>
               </motion.article>
             ))}
           </div>
