@@ -120,7 +120,7 @@ export function Hero() {
                 My Journey
               </a>
               <a href="mailto:hello@dineshappavoo.com" className="btn btn-outline">
-                Contact
+                Contact Me
               </a>
             </div>
           </div>
