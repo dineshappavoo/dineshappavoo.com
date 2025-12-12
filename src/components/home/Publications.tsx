@@ -51,7 +51,7 @@ export function Publications() {
             <p className="text-meta mb-4">PUBLICATION NUMBER: US-2024-0378581-A1 • 2024</p>
 
             <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-              Innovative methods and systems for advanced propulsion and computational modeling technologies.
+              Method and apparatus for handling of refunds in association with a functionally dynamic card.
             </p>
 
             <a 
@@ -72,7 +72,7 @@ export function Publications() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          <h3 className="mb-6">Research Papers</h3>
+          <h3 className="mb-6">Current Research Papers</h3>
           
           <div className="space-y-6">
             {/* Rocket Engine Paper */}

@@ -103,15 +103,15 @@ export function Hero() {
           <div className="space-y-4 ui-font">
             {/* Primary CTA - Centered */}
             <div className="flex justify-center">
-              <a href="#blog" className="btn btn-blue" style={{ fontSize: '1rem', padding: '1rem 2.5rem' }}>
-                Read My Blog
+              <a href="#publications" className="btn btn-blue" style={{ fontSize: '1rem', padding: '1rem 2.5rem' }}>
+                Patents & Research
               </a>
             </div>
 
             {/* Secondary CTAs - Centered (Newsletter removed) */}
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="#publications" className="btn btn-outline">
-                Patents & Research
+              <a href="#blog" className="btn btn-outline">
+                Read My Blog
               </a>
               <a href="#companies" className="btn btn-outline">
                 Explore My Work
@@ -151,7 +151,7 @@ export function Hero() {
               {status === 'success' ? (
                 <div className="p-4 rounded-lg" style={{ background: 'rgba(0, 137, 123, 0.1)' }}>
                   <p className="text-small" style={{ color: 'var(--accent-green)', fontWeight: 600 }}>
-                    ✓ Thanks for subscribing! Check your email to confirm.
+                    ✓ Thanks for subscribing!.
                   </p>
                 </div>
               ) : (
