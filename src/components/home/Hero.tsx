@@ -1,8 +1,51 @@
 'use client';
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export function Hero() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    const url = `https://dineshappavoo.us19.list-manage.com/subscribe/post-json?u=378a03eeb2358b1416a203297&id=63d42a7294&f_id=007150e0f0&EMAIL=${encodeURIComponent(email)}&c=?`;
+
+    try {
+      const script = document.createElement('script');
+      const callbackName = 'mailchimpCallback' + Date.now();
+      
+      (window as any)[callbackName] = (data: any) => {
+        delete (window as any)[callbackName];
+        document.body.removeChild(script);
+
+        if (data.result === 'success') {
+          setStatus('success');
+          setEmail('');
+        } else {
+          setStatus('error');
+        }
+      };
+
+      script.src = url.replace('&c=?', `&c=${callbackName}`);
+      document.body.appendChild(script);
+
+      setTimeout(() => {
+        if (status === 'loading') {
+          setStatus('error');
+          if (document.body.contains(script)) {
+            document.body.removeChild(script);
+          }
+          delete (window as any)[callbackName];
+        }
+      }, 10000);
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section className="section-xl">
       <div className="container-editorial">
@@ -104,37 +147,52 @@ export function Hero() {
               <p className="text-small mb-3" style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
                 Get updates on my latest work
               </p>
-              <form 
-                action="https://dineshappavoo.us19.list-manage.com/subscribe/post?u=378a03eeb2358b1416a203297&amp;id=63d42a7294&amp;f_id=007150e0f0"
-                method="post"
-                target="_blank"
-                className="flex gap-2 flex-col sm:flex-row"
-              >
-                <input type="hidden" name="b_378a03eeb2358b1416a203297_63d42a7294" value="" />
-                <input
-                  type="email"
-                  name="EMAIL"
-                  placeholder="your@email.com"
-                  required
-                  className="flex-1 px-4 py-2 rounded-full border-2 ui-font text-sm"
-                  style={{
-                    borderColor: 'var(--accent-blue)',
-                    background: 'white',
-                    outline: 'none',
-                  }}
-                />
-                <button
-                  type="submit"
-                  className="ui-font font-semibold px-6 py-2 rounded-full text-sm whitespace-nowrap"
-                  style={{
-                    background: 'var(--accent-blue)',
-                    color: 'white',
-                    border: 'none',
-                  }}
-                >
-                  Subscribe
-                </button>
-              </form>
+              
+              {status === 'success' ? (
+                <div className="p-4 rounded-lg" style={{ background: 'rgba(0, 137, 123, 0.1)' }}>
+                  <p className="text-small" style={{ color: 'var(--accent-green)', fontWeight: 600 }}>
+                    ✓ Thanks for subscribing! Check your email to confirm.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="flex gap-2 flex-col sm:flex-row">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    required
+                    disabled={status === 'loading'}
+                    className="flex-1 px-4 py-2 rounded-full border-2 ui-font text-sm"
+                    style={{
+                      borderColor: 'var(--accent-blue)',
+                      background: 'white',
+                      outline: 'none',
+                      opacity: status === 'loading' ? 0.6 : 1,
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="ui-font font-semibold px-6 py-2 rounded-full text-sm whitespace-nowrap"
+                    style={{
+                      background: 'var(--accent-blue)',
+                      color: 'white',
+                      border: 'none',
+                      opacity: status === 'loading' ? 0.6 : 1,
+                      cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+                    }}
+                  >
+                    {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </form>
+              )}
+              
+              {status === 'error' && (
+                <p className="text-small mt-2" style={{ color: 'var(--accent-orange)' }}>
+                  Something went wrong. Please try again.
+                </p>
+              )}
             </div>
           </div>
         </motion.div>
