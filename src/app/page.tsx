@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { Companies } from "@/components/home/Companies";
 import { About } from "@/components/home/About";
 import { Projects } from "@/components/home/Projects";
+import { Publications } from "@/components/home/Publications";
 import { Blog } from "@/components/home/Blog";
 import { Newsletter } from "@/components/home/Newsletter";
 import { Contact } from "@/components/home/Contact";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Blog />
       <Newsletter />
+      <Publications />
       <Companies />
       <About />
       <Projects />

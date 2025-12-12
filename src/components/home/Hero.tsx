@@ -56,27 +56,34 @@ export function Hero() {
             </div>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 ui-font">
-            <a href="#blog" className="btn btn-blue">
-              Blog
-            </a>
-            <a href="#newsletter" className="btn btn-ghost">
-              Newsletter
-            </a>
-            <a href="#companies" className="btn btn-ghost">
-              Explore My Work
-            </a>
-            <a href="#about" className="btn btn-ghost">
-              My Journey
-            </a>
-            <a href="mailto:hello@dineshappavoo.com" className="btn btn-ghost">
-              hello@dineshappavoo.com
-            </a>
+          {/* CTA Buttons - Centered & Filled */}
+          <div className="space-y-4 ui-font">
+            {/* Primary CTA - Centered */}
+            <div className="flex justify-center">
+              <a href="#blog" className="btn btn-blue" style={{ fontSize: '1rem', padding: '1rem 2.5rem' }}>
+                Read My Blog
+              </a>
+            </div>
+
+            {/* Secondary CTAs - Centered (Newsletter removed) */}
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a href="#publications" className="btn btn-outline">
+                Patents & Research
+              </a>
+              <a href="#companies" className="btn btn-outline">
+                Explore My Work
+              </a>
+              <a href="#about" className="btn btn-outline">
+                My Journey
+              </a>
+              <a href="mailto:hello@dineshappavoo.com" className="btn btn-outline">
+                Contact
+              </a>
+            </div>
           </div>
         </motion.div>
 
-        {/* Featured Quote */}
+        {/* Featured Quote with Newsletter Signup */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -87,10 +94,48 @@ export function Hero() {
             <p className="text-small mb-2" style={{ color: 'var(--accent-blue)', fontWeight: 600 }}>
               Current Focus
             </p>
-            <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--text-primary)' }}>
+            <p style={{ fontSize: '1.125rem', lineHeight: '1.7', color: 'var(--text-primary)', marginBottom: '1.5rem' }}>
               Developing <strong>Full-Flow Staged Combustion rocket engines</strong> for point-to-point Earth transportation 
               and creating <strong>digital blood twins</strong> using AlphaFold 3 for personalized medicine.
             </p>
+
+            {/* Inline Newsletter Signup */}
+            <div className="border-t pt-6 mt-6" style={{ borderColor: 'var(--accent-blue)' }}>
+              <p className="text-small mb-3" style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
+                Get updates on my latest work
+              </p>
+              <form 
+                action="https://dineshappavoo.us19.list-manage.com/subscribe/post?u=378a03eeb2358b1416a203297&amp;id=63d42a7294&amp;f_id=007150e0f0"
+                method="post"
+                target="_blank"
+                className="flex gap-2 flex-col sm:flex-row"
+              >
+                <input type="hidden" name="b_378a03eeb2358b1416a203297_63d42a7294" value="" />
+                <input
+                  type="email"
+                  name="EMAIL"
+                  placeholder="your@email.com"
+                  required
+                  className="flex-1 px-4 py-2 rounded-full border-2 ui-font text-sm"
+                  style={{
+                    borderColor: 'var(--accent-blue)',
+                    background: 'white',
+                    outline: 'none',
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="ui-font font-semibold px-6 py-2 rounded-full text-sm whitespace-nowrap"
+                  style={{
+                    background: 'var(--accent-blue)',
+                    color: 'white',
+                    border: 'none',
+                  }}
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
           </div>
         </motion.div>
 
