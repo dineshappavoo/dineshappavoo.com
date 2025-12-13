@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   creator: "Dinesh Appavoo",
   metadataBase: new URL('https://dineshappavoo.com'),
   openGraph: {
-    title: "Dinesh Appavoo | Aerospace & Healthcare Innovation",
+    title: "Dinesh Appavoo | Aerospace And Healthcare Innovation",
     description: "Building transformative technology at the intersection of aerospace and healthcare",
     type: "website",
     siteName: "Dinesh Appavoo",
