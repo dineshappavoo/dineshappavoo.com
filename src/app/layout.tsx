@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     siteName: "Dinesh Appavoo",
     url: "https://dineshappavoo.com",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Dinesh Appavoo - Aerospace & Healthcare Innovation",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -22,6 +30,7 @@ export const metadata: Metadata = {
     creator: "@DineshAppavoo",
     title: "Dinesh Appavoo | Aerospace & Healthcare Innovation",
     description: "Building transformative technology at the intersection of aerospace and healthcare",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://dineshappavoo.com",

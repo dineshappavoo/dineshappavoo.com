@@ -1,0 +1,54 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDFAF5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F8F5F0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative gradient bar -->
+  <defs>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2962FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00897B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2962FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accentGrad)"/>
+  
+  <!-- Content -->
+  <text x="100" y="200" font-family="Lora, Georgia, serif" font-size="80" font-weight="700" fill="#2a2520">
+    Dinesh Appavoo
+  </text>
+  
+  <text x="100" y="280" font-family="Lora, Georgia, serif" font-size="36" font-weight="400" fill="#5a534d">
+    Building transformative technology at the
+  </text>
+  
+  <text x="100" y="330" font-family="Lora, Georgia, serif" font-size="36" font-weight="400" fill="#5a534d">
+    intersection of 
+    <tspan fill="#2962FF" font-weight="600">aerospace</tspan> and 
+    <tspan fill="#00897B" font-weight="600">healthcare</tspan>
+  </text>
+  
+  <!-- Companies -->
+  <text x="100" y="450" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#857b73" letter-spacing="1">
+    FOUNDER
+  </text>
+  
+  <text x="100" y="510" font-family="Lora, Georgia, serif" font-size="32" font-weight="600" fill="#2962FF">
+    🚀 Hypersona
+  </text>
+  
+  <text x="100" y="560" font-family="Lora, Georgia, serif" font-size="32" font-weight="600" fill="#00897B">
+    🧬 Bean
+  </text>
+  
+  <!-- Website URL -->
+  <text x="1100" y="610" font-family="Inter, sans-serif" font-size="20" font-weight="500" fill="#857b73" text-anchor="end">
+    dineshappavoo.com
+  </text>
+</svg>
