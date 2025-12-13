@@ -76,6 +76,7 @@ export function Hero() {
           <div className="flex flex-wrap gap-3 mb-12">
             <span className="badge badge-blue">Founder</span>
             <span className="badge badge-green">Engineer</span>
+            <span className="badge badge-green">Leader</span>
             <span className="badge badge-orange">Researcher</span>
           </div>
 
