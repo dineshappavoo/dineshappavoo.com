@@ -15,7 +15,7 @@ export function Projects() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-meta mb-6" style={{ color: 'var(--accent-orange)' }}>RESEARCH & DEVELOPMENT</p>
+          <p className="text-meta mb-6" style={{ color: 'var(--orange-accent)' }}>RESEARCH & DEVELOPMENT</p>
           <h2 className="mb-6">Deep Technical Work</h2>
           <p className="text-subtitle">
             Exploring the boundaries of aerospace engineering and computational biology.
@@ -31,7 +31,11 @@ export function Projects() {
           className="mb-20"
         >
           <div className="mb-6">
-            <span className="badge badge-blue ui-font mb-4 inline-block">AEROSPACE ENGINEERING</span>
+            <span className="badge ui-font mb-4 inline-block" style={{
+              background: 'var(--orange-light)',
+              color: 'var(--orange-accent)',
+              border: '1px solid var(--orange-accent)'
+            }}>AEROSPACE ENGINEERING</span>
             <h3 className="mb-4">Full-Flow Staged Combustion Engine</h3>
             <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
               Advanced propulsion research inspired by SpaceX Raptor 3
@@ -57,7 +61,7 @@ export function Projects() {
             </p>
 
             <div className="grid-2 mt-8 mb-8">
-              <div className="card-blue">
+              <div className="card-accent">
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Oxygen-Rich Turbopump</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Operating in oxygen-rich environments at extreme temperatures, this system 
@@ -66,7 +70,7 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="card-blue">
+              <div className="card-accent">
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Fuel-Rich Turbopump</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   The fuel-rich side manages cryogenic propellants while precisely controlling 
@@ -75,7 +79,17 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="card">
+              <div className="card" style={{ position: 'relative' }}>
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '1rem',
+                  bottom: '1rem',
+                  width: '3px',
+                  background: 'var(--orange-accent)',
+                  opacity: 0.3,
+                  borderRadius: '2px'
+                }}></div>
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Main Combustion Chamber</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Where chemistry becomes thrust. We're optimizing injection patterns and 
@@ -84,7 +98,17 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="card">
+              <div className="card" style={{ position: 'relative' }}>
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '1rem',
+                  bottom: '1rem',
+                  width: '3px',
+                  background: 'var(--orange-accent)',
+                  opacity: 0.3,
+                  borderRadius: '2px'
+                }}></div>
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Bell Nozzle</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Computational fluid dynamics guides our nozzle design, optimizing expansion 
@@ -104,7 +128,7 @@ export function Projects() {
                 href="https://hyperx.hypersona.space" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="link-blue ui-font"
+                className="link-accent ui-font"
               >
                 Explore the technical details →
               </a>
@@ -123,7 +147,11 @@ export function Projects() {
           className="mb-12"
         >
           <div className="mb-6">
-            <span className="badge badge-green ui-font mb-4 inline-block">COMPUTATIONAL BIOLOGY</span>
+            <span className="badge ui-font mb-4 inline-block" style={{
+              background: 'var(--orange-light)',
+              color: 'var(--orange-accent)',
+              border: '1px solid var(--orange-accent)'
+            }}>COMPUTATIONAL BIOLOGY</span>
             <h3 className="mb-4">Virtual Blood Twin Technology</h3>
             <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
               Digital proteomics using AlphaFold 3 for personalized medicine
@@ -151,7 +179,7 @@ export function Projects() {
             </p>
 
             <div className="grid-2 mt-8 mb-8">
-              <div className="card-green">
+              <div className="card-accent">
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Protein Structure Mapping</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Systematic analysis of blood protein structures, creating a comprehensive 
@@ -160,7 +188,7 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="card-green">
+              <div className="card-accent">
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Drug Interaction Modeling</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Simulating how drug candidates bind to target proteins, predicting both 
@@ -168,7 +196,17 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="card">
+              <div className="card" style={{ position: 'relative' }}>
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '1rem',
+                  bottom: '1rem',
+                  width: '3px',
+                  background: 'var(--orange-accent)',
+                  opacity: 0.3,
+                  borderRadius: '2px'
+                }}></div>
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Virtual Twin Development</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Creating personalized models that account for individual genetic variations, 
@@ -176,7 +214,17 @@ export function Projects() {
                 </p>
               </div>
 
-              <div className="card">
+              <div className="card" style={{ position: 'relative' }}>
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '1rem',
+                  bottom: '1rem',
+                  width: '3px',
+                  background: 'var(--orange-accent)',
+                  opacity: 0.3,
+                  borderRadius: '2px'
+                }}></div>
                 <h4 className="mb-3" style={{ fontSize: '1.125rem' }}>Discovery Pipeline</h4>
                 <p className="text-small" style={{ color: 'var(--text-secondary)' }}>
                   Accelerating drug discovery by orders of magnitude, from years to months, 
@@ -195,7 +243,7 @@ export function Projects() {
                 href="https://bean.inc" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="link-blue ui-font"
+                className="link-accent ui-font"
               >
                 Learn about the technology →
               </a>

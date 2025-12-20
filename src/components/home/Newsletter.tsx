@@ -76,9 +76,26 @@ export function Newsletter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="card-purple text-center"
-          style={{ padding: '3rem 2rem' }}
+          className="card-subtle text-center"
+          style={{ 
+            padding: '3rem 2rem',
+            position: 'relative',
+            border: '1px solid var(--border-light)'
+          }}
         >
+          {/* Subtle orange accent on top border */}
+          <div style={{
+            position: 'absolute',
+            top: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '80px',
+            height: '3px',
+            background: 'var(--orange-accent)',
+            opacity: 0.5,
+            borderRadius: '0 0 2px 2px'
+          }}></div>
+
           <div className="text-5xl mb-6">✉️</div>
           <h3 className="mb-4">Stay Updated</h3>
           <p className="text-subtitle mb-8 max-w-lg mx-auto">
@@ -100,17 +117,21 @@ export function Newsletter() {
                   fontSize: '1rem',
                   outline: 'none',
                   background: 'white',
+                  color: 'var(--text-primary)',
                   opacity: status === 'loading' || status === 'success' ? 0.6 : 1,
                 }}
               />
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="btn btn-blue ui-font"
+                className="btn ui-font"
                 style={{ 
                   whiteSpace: 'nowrap',
                   opacity: status === 'loading' || status === 'success' ? 0.6 : 1,
                   cursor: status === 'loading' || status === 'success' ? 'not-allowed' : 'pointer',
+                  background: 'var(--orange-accent)',
+                  color: 'white',
+                  border: '2px solid var(--orange-accent)',
                 }}
               >
                 {status === 'loading' ? 'Subscribing...' : status === 'success' ? 'Subscribed!' : 'Subscribe'}
@@ -122,9 +143,12 @@ export function Newsletter() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 rounded-lg mb-4"
-                style={{ background: 'var(--accent-green-light)' }}
+                style={{ 
+                  background: 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-medium)'
+                }}
               >
-                <p className="text-small" style={{ color: 'var(--accent-green)', fontWeight: 600 }}>
+                <p className="text-small" style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
                   ✓ {message}
                 </p>
               </motion.div>
@@ -135,9 +159,13 @@ export function Newsletter() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="p-4 rounded-lg mb-4"
-                style={{ background: 'var(--accent-orange-light)' }}
+                style={{ 
+                  background: 'var(--orange-light)',
+                  border: '1px solid var(--orange-accent)',
+                  borderWidth: '1px'
+                }}
               >
-                <p className="text-small" style={{ color: 'var(--accent-orange)', fontWeight: 600 }}>
+                <p className="text-small" style={{ color: 'var(--orange-accent)', fontWeight: 600 }}>
                   ✗ {message}
                 </p>
               </motion.div>
