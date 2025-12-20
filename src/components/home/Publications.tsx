@@ -15,7 +15,7 @@ export function Publications() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-meta mb-6" style={{ color: 'var(--accent-purple)' }}>PUBLICATIONS</p>
+          <p className="text-meta mb-6" style={{ color: 'var(--orange-accent)' }}>PUBLICATIONS</p>
           <h2 className="mb-6">Patents & Research Papers</h2>
           <p className="text-subtitle">
             Contributing to the body of knowledge in aerospace propulsion and computational healthcare.
@@ -32,9 +32,9 @@ export function Publications() {
         >
           <h3 className="mb-6">Patents</h3>
           
-          <div className="card-blue">
+          <div className="card-accent">
             <div className="mb-4">
-              <span className="badge badge-blue ui-font">US PATENT APPLICATION</span>
+              <span className="badge badge-accent ui-font">US PATENT APPLICATION</span>
             </div>
             
             <h4 className="mb-3" style={{ fontSize: '1.25rem' }}>
@@ -58,7 +58,7 @@ export function Publications() {
               href="https://patents.justia.com/patent/20240378581"
               target="_blank"
               rel="noopener noreferrer"
-              className="link-blue ui-font"
+              className="link-accent ui-font"
             >
               View Patent Application →
             </a>
@@ -76,10 +76,27 @@ export function Publications() {
           
           <div className="space-y-6">
             {/* Rocket Engine Paper */}
-            <div className="card">
+            <div className="card" style={{ position: 'relative' }}>
+              {/* Orange accent indicator */}
+              <div style={{
+                position: 'absolute',
+                left: 0,
+                top: '1.5rem',
+                bottom: '1.5rem',
+                width: '3px',
+                background: 'var(--orange-accent)',
+                opacity: 0.4,
+                borderRadius: '2px'
+              }}></div>
+
               <div className="flex items-start justify-between mb-4 flex-wrap gap-3">
                 <div>
-                  <span className="badge badge-blue ui-font">IN PROGRESS</span>
+                  <span className="badge ui-font" style={{ 
+                    background: 'var(--orange-light)',
+                    color: 'var(--orange-accent)',
+                    border: '1px solid var(--orange-accent)',
+                    borderWidth: '1px'
+                  }}>IN PROGRESS</span>
                 </div>
                 <span className="text-meta">AEROSPACE ENGINEERING</span>
               </div>
@@ -96,10 +113,27 @@ export function Publications() {
             </div>
 
             {/* Healthcare Paper */}
-            <div className="card">
+            <div className="card" style={{ position: 'relative' }}>
+              {/* Orange accent indicator */}
+              <div style={{
+                position: 'absolute',
+                left: 0,
+                top: '1.5rem',
+                bottom: '1.5rem',
+                width: '3px',
+                background: 'var(--orange-accent)',
+                opacity: 0.4,
+                borderRadius: '2px'
+              }}></div>
+
               <div className="flex items-start justify-between mb-4 flex-wrap gap-3">
                 <div>
-                  <span className="badge badge-green ui-font">IN PROGRESS</span>
+                  <span className="badge ui-font" style={{ 
+                    background: 'var(--orange-light)',
+                    color: 'var(--orange-accent)',
+                    border: '1px solid var(--orange-accent)',
+                    borderWidth: '1px'
+                  }}>IN PROGRESS</span>
                 </div>
                 <span className="text-meta">COMPUTATIONAL BIOLOGY</span>
               </div>
@@ -127,7 +161,7 @@ export function Publications() {
         >
           <p className="text-small" style={{ color: 'var(--text-tertiary)' }}>
             Interested in collaboration or have questions about this research? <br />
-            <a href="mailto:hello@dineshappavoo.com" className="link-blue">Get in touch</a>
+            <a href="mailto:hello@dineshappavoo.com" className="link-accent">Get in touch</a>
           </p>
         </motion.div>
       </div>

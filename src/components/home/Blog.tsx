@@ -91,7 +91,7 @@ export function Blog() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <p className="text-meta mb-6" style={{ color: 'var(--accent-purple)' }}>WRITING</p>
+          <p className="text-meta text-accent mb-6">WRITING</p>
           <h2 className="mb-6">Thoughts & Essays</h2>
           <p className="text-subtitle">
             Exploring the intersection of technology, science, and the future of humanity.
@@ -116,7 +116,20 @@ export function Blog() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="card"
+                style={{ position: 'relative' }}
               >
+                {/* Subtle orange accent line */}
+                <div style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '1.5rem',
+                  bottom: '1.5rem',
+                  width: '3px',
+                  background: 'var(--orange-accent)',
+                  opacity: 0.3,
+                  borderRadius: '2px'
+                }}></div>
+
                 <div className="grid md:grid-cols-3 gap-6">
                   {/* Thumbnail */}
                   {post.thumbnail && (
@@ -139,7 +152,11 @@ export function Blog() {
                   {/* Content */}
                   <div className={post.thumbnail ? 'md:col-span-2' : 'md:col-span-3'}>
                     <div className="mb-4">
-                      <span className="badge badge-purple ui-font">Medium</span>
+                      <span className="badge ui-font" style={{
+                        background: 'var(--orange-light)',
+                        color: 'var(--orange-accent)',
+                        border: '1px solid var(--orange-accent)'
+                      }}>Medium</span>
                     </div>
                     
                     <h3 className="mb-4" style={{ fontSize: '1.75rem' }}>
@@ -167,7 +184,7 @@ export function Blog() {
                       href={post.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="link-blue ui-font"
+                      className="link-accent ui-font"
                     >
                       Read on Medium →
                     </a>
