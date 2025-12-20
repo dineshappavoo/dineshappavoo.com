@@ -1,54 +1,82 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#FDFAF5;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#F8F5F0;stop-opacity:1" />
-    </linearGradient>
-  </defs>
+  <!-- Background - Clean white -->
+  <rect width="1200" height="630" fill="#FFFFFF"/>
   
-  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  <!-- Subtle top accent bar - orange -->
+  <rect x="0" y="0" width="1200" height="6" fill="#E07856" opacity="0.6"/>
   
-  <!-- Decorative gradient bar -->
-  <defs>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#2962FF;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#00897B;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2962FF;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect x="0" y="0" width="1200" height="8" fill="url(#accentGrad)"/>
+  <!-- Location dot - top left corner -->
+  <circle cx="100" cy="100" r="8" fill="#E07856"/>
+  <text x="120" y="108" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#71717A" letter-spacing="1">
+    SAN FRANCISCO, CALIFORNIA
+  </text>
   
-  <!-- Content -->
-  <text x="100" y="200" font-family="Lora, Georgia, serif" font-size="80" font-weight="700" fill="#2a2520">
+  <!-- Name -->
+  <text x="100" y="220" font-family="Lora, Georgia, serif" font-size="72" font-weight="700" fill="#18181B">
     Dinesh Appavoo
   </text>
   
-  <text x="100" y="280" font-family="Lora, Georgia, serif" font-size="36" font-weight="400" fill="#5a534d">
+  <!-- Tagline -->
+  <text x="100" y="290" font-family="Lora, Georgia, serif" font-size="32" font-weight="400" fill="#3F3F46">
     Building transformative technology at the
   </text>
   
-  <text x="100" y="330" font-family="Lora, Georgia, serif" font-size="36" font-weight="400" fill="#5a534d">
+  <text x="100" y="335" font-family="Lora, Georgia, serif" font-size="32" font-weight="400" fill="#3F3F46">
     intersection of 
-    <tspan fill="#2962FF" font-weight="600">aerospace</tspan> and 
-    <tspan fill="#00897B" font-weight="600">healthcare</tspan>
+    <tspan fill="#27272A" font-weight="600">aerospace</tspan> and 
+    <tspan fill="#27272A" font-weight="600">healthcare</tspan>
   </text>
   
-  <!-- Companies -->
-  <text x="100" y="450" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#857b73" letter-spacing="1">
+  <!-- Companies section -->
+  <text x="100" y="440" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#71717A" letter-spacing="1">
     FOUNDER
   </text>
   
-  <text x="100" y="510" font-family="Lora, Georgia, serif" font-size="32" font-weight="600" fill="#2962FF">
-    🚀 Hypersona
-  </text>
+  <!-- Hypersona -->
+  <g>
+    <!-- Simple rocket icon -->
+    <path d="M110 470 L116 478 L116 491 L110 497 L104 491 L104 478 Z" 
+          stroke="#27272A" 
+          stroke-width="1.2" 
+          fill="#FAFAFA"/>
+    <path d="M110 470 L116 478 L104 478 Z" fill="#E4E4E7"/>
+    <circle cx="110" cy="482" r="1.5" fill="#E07856"/>
+    <path d="M108 497 L107.5 503 L110 501 L112.5 503 L112 497" fill="#E07856" opacity="0.6"/>
+    
+    <text x="130" y="495" font-family="Lora, Georgia, serif" font-size="28" font-weight="600" fill="#18181B">
+      Hypersona
+    </text>
+    <text x="300" y="495" font-family="Inter, sans-serif" font-size="20" font-weight="400" fill="#71717A">
+      Rocket Propulsion
+    </text>
+  </g>
   
-  <text x="100" y="560" font-family="Lora, Georgia, serif" font-size="32" font-weight="600" fill="#00897B">
-    🧬 Bean
-  </text>
+  <!-- Bean -->
+  <g>
+    <!-- Simple DNA icon -->
+    <path d="M104 525 C106 527 106 529 104 531 C102 533 102 535 104 537 C106 539 106 541 104 543" 
+          stroke="#27272A" 
+          stroke-width="1.2" 
+          fill="none"/>
+    <path d="M116 525 C114 527 114 529 116 531 C118 533 118 535 116 537 C114 539 114 541 116 543" 
+          stroke="#27272A" 
+          stroke-width="1.2" 
+          fill="none"/>
+    <line x1="104" y1="529" x2="116" y2="529" stroke="#E07856" stroke-width="1" opacity="0.6"/>
+    <line x1="104" y1="535" x2="116" y2="535" stroke="#E07856" stroke-width="1" opacity="0.6"/>
+    <circle cx="104" cy="529" r="1.5" fill="#E07856"/>
+    <circle cx="116" cy="535" r="1.5" fill="#E07856"/>
+    
+    <text x="130" y="540" font-family="Lora, Georgia, serif" font-size="28" font-weight="600" fill="#18181B">
+      Bean
+    </text>
+    <text x="220" y="540" font-family="Inter, sans-serif" font-size="20" font-weight="400" fill="#71717A">
+      Digital Blood Twins
+    </text>
+  </g>
   
-  <!-- Website URL -->
-  <text x="1100" y="610" font-family="Inter, sans-serif" font-size="20" font-weight="500" fill="#857b73" text-anchor="end">
+  <!-- Website URL - bottom right -->
+  <text x="1100" y="605" font-family="Inter, sans-serif" font-size="18" font-weight="500" fill="#71717A" text-anchor="end">
     dineshappavoo.com
   </text>
 </svg>

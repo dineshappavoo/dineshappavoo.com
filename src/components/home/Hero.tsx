@@ -107,21 +107,21 @@ export function Hero() {
             {/* Primary CTA */}
             <div className="flex justify-center">
               <a 
-                href="#blog" 
+                href="#publications" 
                 className="btn btn-primary" 
                 style={{ 
                   fontSize: '1rem', 
                   padding: '1rem 2.5rem'
                 }}
               >
-                Read My Blog
+                Patents & Research
               </a>
             </div>
 
             {/* Secondary CTAs */}
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="#publications" className="btn btn-outline">
-                Patents & Research
+              <a href="#blog" className="btn btn-outline">
+                Read My Blog
               </a>
               <a href="#companies" className="btn btn-outline">
                 Explore My Work
@@ -173,7 +173,7 @@ export function Hero() {
               {status === 'success' ? (
                 <div className="p-4 rounded-lg" style={{ background: 'var(--bg-tertiary)', border: '1px solid var(--border-medium)' }}>
                   <p className="text-small" style={{ fontWeight: 600 }}>
-                    ✓ Thanks for subscribing! Check your email to confirm.
+                    ✓ Thanks for subscribing!
                   </p>
                 </div>
               ) : (
