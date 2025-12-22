@@ -13,7 +13,7 @@ export function Companies() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="mb-4">Companies</h2>
+          <h2 className="mb-4">Companies Founded</h2>
           <p className="text-lg" style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}>
             Pioneering innovations in rocket propulsion and computational healthcare
           </p>
