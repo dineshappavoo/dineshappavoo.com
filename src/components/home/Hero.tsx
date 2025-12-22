@@ -228,7 +228,7 @@ export function Hero() {
               {status === 'success' ? (
                 <div className="p-4 rounded-lg" style={{ background: 'var(--bg-tertiary)', border: '1px solid var(--border-medium)' }}>
                   <p className="text-small" style={{ fontWeight: 600 }}>
-                    ✓ Thanks for subscribing! Check your email to confirm.
+                    ✓ Thanks for subscribing!
                   </p>
                 </div>
               ) : (
