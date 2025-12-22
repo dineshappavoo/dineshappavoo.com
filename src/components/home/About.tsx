@@ -148,6 +148,101 @@ export function About() {
             </div>
           </div>
         </motion.div>
+
+        {/* Resume Download */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-16"
+        >
+          <div className="card-accent text-center" style={{ padding: '2.5rem', position: 'relative' }}>
+            {/* Subtle orange accent on top */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '80px',
+              height: '3px',
+              background: 'var(--orange-accent)',
+              opacity: 0.5,
+              borderRadius: '0 0 2px 2px'
+            }}></div>
+
+            <p className="text-small mb-3" style={{ color: 'var(--orange-accent)', fontWeight: 600 }}>
+              FULL RESUME
+            </p>
+            <h4 className="mb-4">View Complete CV</h4>
+            <p className="text-small mb-6" style={{ color: 'var(--text-secondary)', maxWidth: '500px', margin: '0 auto 1.5rem' }}>
+              View my complete professional history, technical skills, and detailed project descriptions.
+            </p>
+            
+            {/* Primary CTA - View Online */}
+            <div className="flex justify-center gap-3 mb-4 flex-wrap">
+              <a 
+                href="/resume-dinesh-appavoo.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn ui-font inline-flex items-center gap-2"
+                style={{
+                  background: 'var(--orange-accent)',
+                  color: 'white',
+                  border: '2px solid var(--orange-accent)'
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                View Resume
+              </a>
+              
+              <a 
+                href="/resume-dinesh-appavoo.pdf"
+                download
+                className="btn btn-outline ui-font inline-flex items-center gap-2"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Download PDF
+              </a>
+            </div>
+
+            {/* Shareable link for applications */}
+            <div className="mt-6 pt-4" style={{ borderTop: '1px solid var(--border-light)' }}>
+              <p className="text-small mb-2" style={{ color: 'var(--text-tertiary)', fontSize: '0.875rem' }}>
+                For applications, use this link:
+              </p>
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                <code 
+                  className="text-small px-3 py-2 rounded"
+                  style={{ 
+                    background: 'var(--bg-tertiary)', 
+                    color: 'var(--text-primary)',
+                    fontFamily: 'monospace',
+                    fontSize: '0.875rem',
+                    border: '1px solid var(--border-medium)'
+                  }}
+                >
+                  https://dineshappavoo.com/resume-dinesh-appavoo.pdf
+                </code>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText('https://dineshappavoo.com/resume-dinesh-appavoo.pdf');
+                    // Could add a toast notification here
+                  }}
+                  className="btn btn-ghost ui-font"
+                  style={{ padding: '0.5rem 1rem', fontSize: '0.875rem' }}
+                  title="Copy link to clipboard"
+                >
+                  Copy Link
+                </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

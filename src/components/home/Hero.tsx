@@ -54,7 +54,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {/* Meta Info with Location Indicator - Orange dot */}
+          {/* Meta Info with Location Indicator */}
           <div className="mb-10">
             <div className="location-indicator mb-3">
               <span className="location-dot"></span>
@@ -70,7 +70,66 @@ export function Hero() {
           
           {/* Subheadline */}
           <div className="text-subtitle mb-10" style={{ maxWidth: '600px' }}>
-            <p>
+            {/* Title/Role - Darker and slightly larger */}
+            <p className="mb-6" style={{ 
+              fontSize: '1.25rem', 
+              color: 'var(--text-primary)', 
+              fontWeight: 600,
+              lineHeight: '1.4'
+            }}>
+              Founder & CEO of{' '}
+              <a 
+                href="https://bean.inc" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block transition-all"
+                style={{ 
+                  color: 'var(--text-primary)',
+                  borderBottom: '2px solid var(--border-medium)',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--orange-accent)';
+                  e.currentTarget.style.borderBottomColor = 'var(--orange-accent)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--text-primary)';
+                  e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
+                }}
+              >
+                Bean
+              </a>
+              {' '}and{' '}
+              <a 
+                href="https://hyperx.hypersona.space" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block transition-all"
+                style={{ 
+                  color: 'var(--text-primary)',
+                  borderBottom: '2px solid var(--border-medium)',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--orange-accent)';
+                  e.currentTarget.style.borderBottomColor = 'var(--orange-accent)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--text-primary)';
+                  e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
+                }}
+              >
+                Hypersona
+              </a>
+            </p>
+            
+            {/* Mission statement - Lighter and regular weight */}
+            <p style={{ 
+              fontSize: '1.125rem',
+              color: 'var(--text-secondary)',
+              fontWeight: 400,
+              lineHeight: '1.7'
+            }}>
               Building transformative technology at the intersection of <strong>aerospace</strong> and <strong>healthcare</strong>.
             </p>
           </div>
@@ -86,15 +145,15 @@ export function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 py-10 border-t border-b" style={{ borderColor: 'var(--border-light)' }}>
             <div className="stat">
               <div className="stat-number">2</div>
-              <div className="stat-label">Companies Founded</div>
+              <div className="stat-label">Companies (Founder & CEO)</div>
+            </div>
+            <div className="stat">
+              <div className="stat-number">5</div>
+              <div className="stat-label">Tech Companies (Engineer/Manager)</div>
             </div>
             <div className="stat">
               <div className="stat-number">12+</div>
-              <div className="stat-label">Years in Tech & Entrepreneurship</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">3</div>
-              <div className="stat-label">Major Companies</div>
+              <div className="stat-label">Years in Tech</div>
             </div>
             <div className="stat">
               <div className="stat-number">2</div>
@@ -107,27 +166,35 @@ export function Hero() {
             {/* Primary CTA */}
             <div className="flex justify-center">
               <a 
-                href="#publications" 
+                href="#blog" 
                 className="btn btn-primary" 
                 style={{ 
                   fontSize: '1rem', 
                   padding: '1rem 2.5rem'
                 }}
               >
-                Patents & Research
+                Read My Blog
               </a>
             </div>
 
             {/* Secondary CTAs */}
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="#blog" className="btn btn-outline">
-                Read My Blog
+              <a href="#publications" className="btn btn-outline">
+                Patents & Research
               </a>
               <a href="#companies" className="btn btn-outline">
                 Explore My Work
               </a>
               <a href="#about" className="btn btn-outline">
                 My Journey
+              </a>
+              <a 
+                href="/resume-dinesh-appavoo.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-outline"
+              >
+                Resume
               </a>
               <a href="mailto:hello@dineshappavoo.com" className="btn btn-outline">
                 Contact
@@ -136,27 +203,15 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Featured Quote with Newsletter Signup - Subtle orange accent */}
+        {/* Featured Quote with Newsletter Signup */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-20"
         >
-          <div className="card-subtle" style={{ position: 'relative' }}>
-            {/* Subtle orange accent line on left */}
-            <div style={{
-              position: 'absolute',
-              left: 0,
-              top: '2rem',
-              bottom: '2rem',
-              width: '3px',
-              background: 'var(--orange-accent)',
-              opacity: 0.3,
-              borderRadius: '2px'
-            }}></div>
-
-            <p className="text-small mb-2" style={{ color: 'var(--orange-accent)', fontWeight: 600 }}>
+          <div className="card-subtle">
+            <p className="text-small text-accent mb-2" style={{ fontWeight: 600 }}>
               Current Focus
             </p>
             <p style={{ fontSize: '1.125rem', lineHeight: '1.7', marginBottom: '1.5rem' }}>
@@ -173,7 +228,7 @@ export function Hero() {
               {status === 'success' ? (
                 <div className="p-4 rounded-lg" style={{ background: 'var(--bg-tertiary)', border: '1px solid var(--border-medium)' }}>
                   <p className="text-small" style={{ fontWeight: 600 }}>
-                    ✓ Thanks for subscribing!
+                    ✓ Thanks for subscribing! Check your email to confirm.
                   </p>
                 </div>
               ) : (
