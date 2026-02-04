@@ -97,7 +97,7 @@ export function Hero() {
                   e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
                 }}
               >
-                Bean
+                Bean Technology Inc.
               </a>
               {' '}and{' '}
               <a 
@@ -119,7 +119,7 @@ export function Hero() {
                   e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
                 }}
               >
-                Hypersona
+                Hypersona Inc.
               </a>
             </p>
             
