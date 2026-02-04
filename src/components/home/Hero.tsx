@@ -85,7 +85,7 @@ export function Hero() {
                 className="inline-block transition-all"
                 style={{ 
                   color: 'var(--text-primary)',
-                  borderBottom: '6px solid var(--border-medium)',
+                  borderBottom: '4px solid var(--border-medium)',
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
@@ -107,7 +107,7 @@ export function Hero() {
                 className="inline-block transition-all"
                 style={{ 
                   color: 'var(--text-primary)',
-                  borderBottom: '6px solid var(--border-medium)',
+                  borderBottom: '4px solid var(--border-medium)',
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
