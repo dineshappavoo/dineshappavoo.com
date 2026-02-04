@@ -85,7 +85,7 @@ export function Hero() {
                 className="inline-block transition-all"
                 style={{ 
                   color: 'var(--text-primary)',
-                  borderBottom: '4px solid var(--border-medium)',
+                  borderBottom: '2px solid var(--border-medium)',
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
@@ -97,7 +97,7 @@ export function Hero() {
                   e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
                 }}
               >
-                Bean Technology Inc.
+                Bean
               </a>
               {' '}and{' '}
               <a 
@@ -107,7 +107,7 @@ export function Hero() {
                 className="inline-block transition-all"
                 style={{ 
                   color: 'var(--text-primary)',
-                  borderBottom: '4px solid var(--border-medium)',
+                  borderBottom: '2px solid var(--border-medium)',
                   textDecoration: 'none'
                 }}
                 onMouseEnter={(e) => {
@@ -119,7 +119,7 @@ export function Hero() {
                   e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
                 }}
               >
-                Hypersona Inc.
+                Hypersona
               </a>
             </p>
             
