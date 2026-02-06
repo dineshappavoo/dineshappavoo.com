@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Navigation } from "@/components/home/Navigation";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,7 +37,6 @@ export const metadata: Metadata = {
     canonical: "https://dineshappavoo.com",
   },
   other: {
-    // Social Profile Links
     "twitter:url": "https://x.com/DineshAppavoo",
     "linkedin:url": "https://www.linkedin.com/in/dineshappavoo/",
     "github:url": "https://github.com/dineshappavoo",
@@ -51,10 +51,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         
-        {/* Social Profile Links - JSON-LD structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -95,7 +93,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }

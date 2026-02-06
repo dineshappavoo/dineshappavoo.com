@@ -33,6 +33,13 @@
   --accent-primary: #6B7C93;
   --accent-hover: #5A6A7F;
   --accent-light: #E8EBF0;
+
+  /* Spotify Accent - Slate Green-Grey (subtle, professional) */
+  --spotify-accent: #5a6d5a;
+  --spotify-light: rgba(123, 139, 123, 0.08);
+  --spotify-border: rgba(123, 139, 123, 0.2);
+  --spotify-hover-bg: rgba(123, 139, 123, 0.12);
+  --spotify-hover-border: rgba(123, 139, 123, 0.3);
   
   /* Orange Accent - Very subtle warmth (used sparingly for emphasis) */
   --orange-accent: #E07856;
@@ -553,4 +560,55 @@ textarea::placeholder {
   .card {
     padding: 1.5rem;
   }
+}
+
+/* Fullscreen Kindle Reading Mode */
+#pdf-wrapper:fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #F4F1EA;
+}
+
+#pdf-wrapper:fullscreen iframe {
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Firefox fullscreen */
+#pdf-wrapper:-moz-full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #F4F1EA;
+}
+
+#pdf-wrapper:-moz-full-screen iframe {
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Webkit fullscreen */
+#pdf-wrapper:-webkit-full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #F4F1EA;
+}
+
+#pdf-wrapper:-webkit-full-screen iframe {
+  width: 100%;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
