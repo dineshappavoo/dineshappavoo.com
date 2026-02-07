@@ -69,22 +69,32 @@ export function HomePage() {
             {/* Name & Title */}
             <h1 className="mb-6">Dinesh Appavoo</h1>
             
-            <div className="text-subtitle mb-10" style={{ maxWidth: '600px' }}>
-              <p className="mb-6" style={{ 
-                fontSize: '1.25rem', 
-                color: 'var(--text-primary)', 
-                fontWeight: 600,
-                lineHeight: '1.4'
+            {/* Title - Two Line Layout with Mobile Optimization */}
+            <div className="mb-10" style={{ maxWidth: '700px' }}>
+              <p className="text-meta ui-font" style={{ 
+                fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
+                letterSpacing: '0.08em',
+                marginBottom: '0.75rem',
+                color: 'var(--text-tertiary)',
+                fontWeight: 500
               }}>
-                Founder & CEO of{' '}
+                FOUNDER & CEO
+              </p>
+              
+              <p className="mb-8" style={{ 
+                fontSize: 'clamp(1rem, 3vw, 1.25rem)',
+                color: 'var(--text-secondary)',
+                fontWeight: 400,
+                lineHeight: '1.5'
+              }}>
                 <a 
                   href="https://bean.inc" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block transition-all"
                   style={{ 
-                    color: 'var(--text-primary)',
-                    borderBottom: '4px solid var(--border-medium)',
+                    color: 'var(--text-secondary)',
+                    borderBottom: '2px solid var(--border-medium)',
                     textDecoration: 'none'
                   }}
                   onMouseEnter={(e) => {
@@ -92,21 +102,21 @@ export function HomePage() {
                     e.currentTarget.style.borderBottomColor = 'var(--orange-accent)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'var(--text-primary)';
+                    e.currentTarget.style.color = 'var(--text-secondary)';
                     e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
                   }}
                 >
                   Bean Technology Inc.
                 </a>
-                {' '}and{' '}
+                <span style={{ margin: '0 0.5rem', color: 'var(--text-muted)' }}>·</span>
                 <a 
                   href="https://hyperx.hypersona.space" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block transition-all"
                   style={{ 
-                    color: 'var(--text-primary)',
-                    borderBottom: '4px solid var(--border-medium)',
+                    color: 'var(--text-secondary)',
+                    borderBottom: '2px solid var(--border-medium)',
                     textDecoration: 'none'
                   }}
                   onMouseEnter={(e) => {
@@ -114,7 +124,7 @@ export function HomePage() {
                     e.currentTarget.style.borderBottomColor = 'var(--orange-accent)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'var(--text-primary)';
+                    e.currentTarget.style.color = 'var(--text-secondary)';
                     e.currentTarget.style.borderBottomColor = 'var(--border-medium)';
                   }}
                 >
@@ -123,7 +133,7 @@ export function HomePage() {
               </p>
               
               <p style={{ 
-                fontSize: '1.125rem',
+                fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
                 color: 'var(--text-secondary)',
                 fontWeight: 400,
                 lineHeight: '1.7'
