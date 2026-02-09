@@ -43,7 +43,7 @@ export function Navigation() {
               color: 'var(--text-primary)'
             }}
           >
-            Dinesh Appavoo
+            DA
           </Link>
 
           {/* Navigation Links */}
