@@ -1,14 +1,16 @@
-// components/home/ResearchPage.tsx
+// components/research/ResearchPage.tsx
 'use client';
 
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { getPublishedPapers, getInProgressPapers } from "@/data/papers";
-import { patents } from "@/data/patents";
+import { getUtilityPatents, getProvisionalPatents } from "@/data/patents";
 
 export function ResearchPage() {
   const publishedPapers = getPublishedPapers();
   const inProgressPapers = getInProgressPapers();
+  const utilityPatents = getUtilityPatents();
+  const provisionalPatents = getProvisionalPatents();
 
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg-primary)', paddingTop: '6rem' }}>
@@ -41,43 +43,139 @@ export function ResearchPage() {
           >
             <h2 className="mb-8" style={{ fontSize: '2rem' }}>Patents</h2>
             
-            <div className="space-y-6">
-              {patents.map((patent) => (
-                <div key={patent.id} className="card-accent">
-                  <div className="mb-4">
-                    <span className="badge badge-accent ui-font">{patent.type}</span>
-                  </div>
-                  
-                  <h3 className="mb-3" style={{ fontSize: '1.25rem' }}>
-                    <a 
-                      href={patent.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:opacity-70 transition-opacity"
-                    >
-                      {patent.title}
-                    </a>
-                  </h3>
+            {/* Utility Patents (Granted/Published) */}
+            {utilityPatents.length > 0 && (
+              <>
+                <h3 className="mb-6" style={{ 
+                  fontSize: '1.25rem', 
+                  color: 'var(--text-secondary)',
+                  fontWeight: 500
+                }}>
+                  Utility Patents (Published/Granted)
+                </h3>
+                <div className="space-y-6 mb-12">
+                  {utilityPatents.map((patent) => (
+                    <div key={patent.id} className="card-accent">
+                      <div className="mb-4 flex items-center gap-3 flex-wrap">
+                        <span className="badge badge-accent ui-font">{patent.type}</span>
+                        {patent.status && (
+                          <span className="badge ui-font" style={{
+                            background: patent.status === 'Granted' ? 'var(--bg-success)' : 'var(--bg-tertiary)',
+                            color: patent.status === 'Granted' ? 'var(--text-success)' : 'var(--text-secondary)',
+                            border: '1px solid var(--border-light)'
+                          }}>
+                            {patent.status.toUpperCase()}
+                          </span>
+                        )}
+                      </div>
+                      
+                      <h3 className="mb-3" style={{ fontSize: '1.25rem' }}>
+                        {patent.url ? (
+                          <a 
+                            href={patent.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:opacity-70 transition-opacity"
+                          >
+                            {patent.title}
+                          </a>
+                        ) : (
+                          patent.title
+                        )}
+                      </h3>
 
-                  <p className="text-meta mb-4">
-                    PUBLICATION NUMBER: {patent.number} • {patent.year}
-                  </p>
+                      <p className="text-meta mb-4">
+                        PUBLICATION NUMBER: {patent.number} • {patent.year}
+                      </p>
 
-                  <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    {patent.description}
-                  </p>
+                      {patent.inventors && patent.inventors.length > 0 && (
+                        <p className="text-small mb-4" style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                          Inventor{patent.inventors.length > 1 ? 's' : ''}: {patent.inventors.join(", ")}
+                        </p>
+                      )}
 
-                  <a 
-                    href={patent.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-accent ui-font"
-                  >
-                    View Patent →
-                  </a>
+                      <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                        {patent.description}
+                      </p>
+
+                      {patent.url && (
+                        <a 
+                          href={patent.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-accent ui-font"
+                        >
+                          View Patent →
+                        </a>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </>
+            )}
+
+            {/* Provisional Patents (Filed) */}
+            {provisionalPatents.length > 0 && (
+              <>
+                <h3 className="mb-6" style={{ 
+                  fontSize: '1.25rem', 
+                  color: 'var(--text-secondary)',
+                  fontWeight: 500
+                }}>
+                  Provisional Patent Applications (Filed)
+                </h3>
+                <div className="space-y-6">
+                  {provisionalPatents.map((patent) => (
+                    <div key={patent.id} className="card" style={{ 
+                      border: '1px solid var(--border-medium)',
+                      background: 'var(--bg-secondary)'
+                    }}>
+                      <div className="mb-4 flex items-center gap-3 flex-wrap">
+                        <span className="badge ui-font" style={{
+                          background: 'var(--bg-tertiary)',
+                          color: 'var(--text-secondary)',
+                          border: '1px solid var(--border-light)'
+                        }}>
+                          PROVISIONAL
+                        </span>
+                        {patent.status && (
+                          <span className="badge ui-font" style={{
+                            background: 'var(--orange-light)',
+                            color: 'var(--orange-accent)',
+                            border: '1px solid var(--orange-accent)'
+                          }}>
+                            {patent.status.toUpperCase()}
+                          </span>
+                        )}
+                      </div>
+                      
+                      <h3 className="mb-3" style={{ fontSize: '1.25rem' }}>
+                        {patent.title}
+                      </h3>
+
+                      <p className="text-meta mb-4">
+                        APPLICATION NUMBER: {patent.number}
+                        {patent.filedDate && ` • Filed: ${patent.filedDate}`}
+                      </p>
+
+                      {patent.inventors && patent.inventors.length > 0 && (
+                        <p className="text-small mb-4" style={{ color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                          Inventor{patent.inventors.length > 1 ? 's' : ''}: {patent.inventors.join(", ")}
+                        </p>
+                      )}
+
+                      <p style={{ fontSize: '1rem', lineHeight: '1.7', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+                        {patent.description}
+                      </p>
+
+                      <p className="text-small" style={{ color: 'var(--text-tertiary)', fontStyle: 'italic' }}>
+                        Provisional patents are not publicly searchable. This application is pending conversion to a utility patent.
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
           </motion.div>
 
           <div className="divider mb-20"></div>
