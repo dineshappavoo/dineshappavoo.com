@@ -5,14 +5,14 @@ export const episodes: Episode[] = [
   {
     slug: "episode-0-why-this-podcast-exists",
     episodeNumber: 0,
-    title: "Why This Podcast Exists",
+    title: " Episode 0: The Case for Civilization Beyond Gravity ",
     description: "Before we talk about gravity, science, universe, and the future of humanity, I want to explain why this podcast exists at all. We explore long-term thinking, humanity's place in the universe, and our responsibility to the future.",
     duration: "12 min",
     date: "January 2025",
     coverEmoji: "🌍",
     // Update these URLs after uploading to podcast platforms
-    spotifyEmbedUrl: "https://open.spotify.com/embed/episode/YOUR-EPISODE-ID",
-    youtubeEmbedUrl: "https://www.youtube.com/embed/YOUR-VIDEO-ID",
+    spotifyEmbedUrl: "https://open.spotify.com/embed/episode/5BFGtdtPqXgviFef1ZaxSG/video?utm_source=generator",
+    youtubeEmbedUrl: "https://www.youtube.com/embed/7ZBDAsZl-ko?si=6vpDIXGUP9l-ba95",
     appleEmbedUrl: "https://podcasts.apple.com/podcast/YOUR-PODCAST-ID",
     transcript: [
       // INTRODUCTION

@@ -315,8 +315,8 @@ export function Episode0() {
       description="In this inaugural episode, I share my journey from working at Twitter and Affirm to founding companies building rocket engines and digital blood twins. We explore why these seemingly disparate fields are actually deeply connected, and what it takes to pursue ambitious technical goals."
       duration="45 min"
       date="January 2025"
-      spotifyEmbedUrl="https://open.spotify.com/embed/episode/your-episode-id"
-      youtubeEmbedUrl="https://www.youtube.com/embed/your-video-id"
+      spotifyEmbedUrl="https://open.spotify.com/embed/episode/5BFGtdtPqXgviFef1ZaxSG/video?utm_source=generator"
+      youtubeEmbedUrl="https://www.youtube.com/embed/7ZBDAsZl-ko?si=6vpDIXGUP9l-ba95"
       appleEmbedUrl="https://podcasts.apple.com/podcast/your-podcast-id"
       transcript={transcript}
       showNotes={showNotes}

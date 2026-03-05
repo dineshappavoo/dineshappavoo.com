@@ -33,7 +33,7 @@ export function PodcastPage() {
             {/* Subscribe Links */}
             <div className="flex gap-4 mt-8 flex-wrap ui-font">
               <a 
-                href="https://open.spotify.com/show/your-show-id" 
+                href="https://open.spotify.com/show/192fCye9xMGBDbYTVAkxXk" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
@@ -55,7 +55,7 @@ export function PodcastPage() {
                 Apple Podcasts
               </a>
               <a 
-                href="https://youtube.com/@yourchannelname"
+                href="https://youtube.com/@CivilizationBeyondGravity"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline"
